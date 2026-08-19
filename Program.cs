@@ -20,7 +20,7 @@ namespace Aula01variaveis
             Console.WriteLine("3 - Calcular Média");
             Console.WriteLine("4 - Calcular Tabuada");
 
-            int opcaoEscolhida = int.Parse(Console.ReadLine());
+            int opcaoEscolhida = int.Parse(Console.ReadLine()??"0");
 
             switch (opcaoEscolhida)
             {
@@ -36,6 +36,9 @@ namespace Aula01variaveis
                 case 4:
                     CalcularTabuada();
                     break;
+                case 5:
+                    DetalharData();
+                    break;
                 default:
                     Console.WriteLine("Opção Inválida");
                     break;
@@ -46,6 +49,23 @@ namespace Aula01variaveis
 
 
 
+
+public static void DetalharData()
+        {
+             Console.WriteLine("Digite a data");
+             DateTime data = DateTime.Parse(Console.ReadLine()??"0");
+             string diaDaSemana = data.ToString("dddd");
+            string nomeDoMes = data.ToString("MMMM");
+
+        Console.WriteLine($"Dia da Semana: {diaDaSemana}");
+        Console.WriteLine($"Mês: {nomeDoMes}");
+
+        if(data.DayOfWeek == DayOfWeek.Sunday)
+        {
+            string hora = DateTime.Now.ToString("HH:mm"); //serve para converter um objeto ou valor em texto
+            Console.WriteLine($"A data informada é um domingo! Hora atual: {hora}");
+          
+        }}
 
         public static void VerificarAulaEtec()
         {
